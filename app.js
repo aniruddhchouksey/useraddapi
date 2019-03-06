@@ -20,6 +20,8 @@ app.post('/register-user', function(req, res) {
 
     fs.writeFile('passwd', password, function(err) {
     if (err) throw err;
+    var output = shell.exec("bash ./script",{silent:true,async:false}).output;
+    console.log(output);
 })
 })
 });
